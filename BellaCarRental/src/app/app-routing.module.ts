@@ -6,7 +6,7 @@ import { HomeContentComponent } from './home-content/home-content.component';
 const routes: Routes = [{
   path: "", component: HomeContentComponent
 },{
-path: "contact us", component: ContactUsComponent
+path: "contact-us", component: ContactUsComponent
 }];
 
 @NgModule({

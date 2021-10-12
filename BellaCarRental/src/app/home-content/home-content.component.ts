@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home-content',
@@ -34,9 +35,27 @@ carsForSale = [
 
 ];
 
+newCars = new FormGroup({
+  model: new FormControl('', Validators.required),
+  color: new FormControl('', Validators.required),
+  image: new FormControl('', Validators.required),
+  price:new FormControl('', Validators.required),
+});
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+addCars (){
+
+  
+  if(this.newCars.valid){
+
+    var a = this.newCars.value;
+
+    this.carsForSale.push(a);
+
+ }
+}
 }
